@@ -1,0 +1,15 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "javascript.preferences.includePackageJsonAutoImports": "auto",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "files.associations": {
+    "*.js": "javascript"
+  },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true
+}

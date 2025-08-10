@@ -1,0 +1,29 @@
+{
+  "name": "javascript-exercises-complete",
+  "version": "1.0.0",
+  "description": "Complete collection of 4905 JavaScript exercises from W3Resource",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:basic": "jest --testPathPattern=01-basic",
+    "test:functions": "jest --testPathPattern=03-functions",
+    "test:es6": "jest --testPathPattern=02-fundamental",
+    "test:category": "jest --testPathPattern",
+    "run:exercise": "node",
+    "check:progress": "node utils/progress-tracker.js",
+    "lint": "eslint exercises/**/*.js",
+    "format": "prettier --write exercises/**/*.js"
+  },
+  "keywords": ["javascript", "exercises", "w3resource", "practice", "learning"],
+  "author": "LivBirks",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "@babel/preset-env": "^7.23.9",
+    "babel-jest": "^29.7.0"
+  }
+}

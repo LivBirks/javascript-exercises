@@ -15,7 +15,12 @@
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "test:silent": "jest --silent",
     "test:verbose": "jest --verbose",
-    "run:exercise": "node",
+    "run:exercise": "node utils/exercise-runner.js run",
+    "run:category": "node utils/exercise-runner.js category",
+    "run:batch": "node utils/exercise-runner.js batch",
+    "benchmark": "node utils/exercise-runner.js benchmark",
+    "exercises:list": "node utils/exercise-runner.js list",
+    "exercises:report": "node utils/exercise-runner.js report",
     "check:progress": "node utils/progress-tracker.js",
     "lint": "eslint exercises/**/*.js",
     "format": "prettier --write exercises/**/*.js"

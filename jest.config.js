@@ -1,51 +1,42 @@
 /**
- * Jest Setup - Runs before each test file
+ * Jest Configuration
  */
 
-// Extend Jest matchers
-expect.extend({
-  toBeWithinRange(received, floor, ceiling) {
-    const pass = received >= floor && received <= ceiling;
-    if (pass) {
-      return {
-        message: () => `expected ${received} not to be within range ${floor} - ${ceiling}`,
-        pass: true,
-      };
-    } else {
-      return {
-        message: () => `expected ${received} to be within range ${floor} - ${ceiling}`,
-        pass: false,
-      };
+module.exports = {
+  testEnvironment: 'node',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  globalSetup: '<rootDir>/jest.global-setup.js',
+  globalTeardown: '<rootDir>/jest.global-teardown.js',
+  testMatch: [
+    '**/tests/**/*.test.js',
+    '**/*.test.js'
+  ],
+  collectCoverageFrom: [
+    'exercises/**/*.js',
+    '!exercises/**/tests/**'
+  ],
+  projects: [
+    {
+      displayName: 'Basic Exercises',
+      testMatch: ['<rootDir>/exercises/01-basic/**/*.test.js']
+    },
+    {
+      displayName: 'Functions',
+      testMatch: ['<rootDir>/exercises/03-functions/**/*.test.js']
+    },
+    {
+      displayName: 'ES6 Fundamentals Part 1',
+      testMatch: ['<rootDir>/exercises/02-fundamental-es6-part1/**/*.test.js']
+    },
+    {
+      displayName: 'Async & Promises',
+      testMatch: ['<rootDir>/exercises/11-async/**/*.test.js', '<rootDir>/exercises/12-promises/**/*.test.js']
+    },
+    {
+      displayName: 'DOM & Events',
+      testMatch: ['<rootDir>/exercises/17-dom/**/*.test.js', '<rootDir>/exercises/18-events/**/*.test.js']
     }
-  },
-});
-
-// Global test utilities
-global.sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-// Mock console.log for exercises that use it
-global.mockConsoleLog = () => {
-  const originalLog = console.log;
-  const logs = [];
-  console.log = (...args) => {
-    logs.push(args);
-  };
-  return {
-    logs,
-    restore: () => { console.log = originalLog; }
-  };
+  ],
+  testTimeout: 10000,
+  verbose: true
 };
-
-// Performance testing helper
-global.measurePerformance = (fn, ...args) => {
-  const start = performance.now();
-  const result = fn(...args);
-  const end = performance.now();
-  return {
-    result,
-    executionTime: end - start
-  };
-};
-
-// Set longer timeout for complex exercises
-jest.setTimeout(10000);

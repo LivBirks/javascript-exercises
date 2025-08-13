@@ -2,8 +2,11 @@
  * Jest Configuration
  */
 
-module.exports = {
+export default {
   testEnvironment: 'node',
+  transform: {
+    '^.+\\.js$': 'babel-jest'
+  },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   globalSetup: '<rootDir>/jest.global-setup.js',
   globalTeardown: '<rootDir>/jest.global-teardown.js',

@@ -1,6 +1,7 @@
 {
   "name": "javascript-exercises-complete",
   "version": "1.0.0",
+  "type": "module",
   "description": "Complete collection of 4905 JavaScript exercises from W3Resource",
   "main": "index.js",
   "scripts": {

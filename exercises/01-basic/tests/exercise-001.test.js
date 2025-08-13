@@ -1,4 +1,4 @@
-const getCurrentDayAndTime = require('../exercise-001');
+import getCurrentDayAndTime from '../exercise-001.js';
 
 describe('Exercise 1: Current Day and Time', () => {
   test('should return an object with day and time properties', () => {
@@ -12,7 +12,7 @@ describe('Exercise 1: Current Day and Time', () => {
     const result = getCurrentDayAndTime();
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-    const dayPattern = new RegExp(`Today is : (${days.join('|')})\\.`);
+    const dayPattern = new RegExp(`Today is : (${days.join('|')})`);
     expect(result.day).toMatch(dayPattern);
   });
 

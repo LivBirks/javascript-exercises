@@ -28,5 +28,9 @@ function getCurrentDayAndTime() {
   return { day, time };
 }
 
-getCurrentDayAndTime()
+// Run the function when executed directly
+const result = getCurrentDayAndTime();
+console.log(result.day);
+console.log(result.time);
+
 export default getCurrentDayAndTime;

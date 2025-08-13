@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync, spawn } = require('child_process');
-const ProgressTracker = require('./progress-tracker');
+const ProgressTracker = require('./progress-tracker.cjs');
 
 class ExerciseRunner {
   constructor() {

@@ -7,7 +7,7 @@ A complete collection of JavaScript exercises covering fundamental concepts to a
 ## Features
 
 - **4,905 exercises** across 22 categories
-- **Comprehensive testing** with Jest framework
+- **Testing** with Jest framework
 - **Progress tracking** with percentage completion
 - **Performance benchmarking** for optimization
 - **Category-based learning** paths
@@ -276,4 +276,4 @@ Track your JavaScript mastery:
 
 ---
 
-**Ready to master JavaScript?** Start with `npm run check:progress` and begin your journey through 4,905 carefully crafted exercises!
+**If you want to check your progress: ** run `npm run check:progress` and track your progress out of the 4,905 exercises.
